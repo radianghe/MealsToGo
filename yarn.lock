@@ -1552,6 +1552,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@expo-google-fonts/lato@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "@expo-google-fonts/lato@npm:0.2.2"
+  checksum: 05ae7ca52fb7c6ecc91e4f7c4f55fa9be9753af801dbed8fcec1cf8ccf3bc8243992766d7aa8edc1a7e6555ea5658da181d9b60ebbe6de9fa9a4cfccde26572e
+  languageName: node
+  linkType: hard
+
+"@expo-google-fonts/oswald@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "@expo-google-fonts/oswald@npm:0.2.2"
+  checksum: 6de9a8688f57a9e4ef86127ea08e32bfd383fbd051bb23afeefda8daecac25993d2e1072f656b96a15fa714efc6b2217c56377783f11ab738b94cd717b1dc9cf
+  languageName: node
+  linkType: hard
+
 "@expo/config-plugins@npm:4.0.6":
   version: 4.0.6
   resolution: "@expo/config-plugins@npm:4.0.6"
@@ -4233,7 +4247,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-font@npm:~10.0.5":
+"expo-font@npm:~10.0.4, expo-font@npm:~10.0.5":
   version: 10.0.5
   resolution: "expo-font@npm:10.0.5"
   dependencies:
@@ -6131,9 +6145,12 @@ __metadata:
   resolution: "mealstogo@workspace:."
   dependencies:
     "@babel/core": ^7.12.9
+    "@expo-google-fonts/lato": ^0.2.2
+    "@expo-google-fonts/oswald": ^0.2.2
     "@react-native-community/eslint-config": ^3.0.1
     eslint: 7.32.0
     expo: ~44.0.0
+    expo-font: ~10.0.4
     expo-status-bar: ~1.2.0
     prettier: ^2.6.1
     react: 17.0.1
