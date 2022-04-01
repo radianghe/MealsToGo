@@ -1,9 +1,11 @@
 import React from "react";
+import { Text } from "react-native";
 import styled from "styled-components/native";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
+import { Spacer } from "./spacer/spacer-component";
 
 const Title = styled.Text`
   color: ${(props) => props.theme.colors.ui.primary};
@@ -20,7 +22,10 @@ const RestaurantCardCover = styled(Card.Cover)`
 `;
 
 const Info = styled.View`
-  padding: ${(props) => props.theme.space[3]};
+  margin-top: ${(props) => props.theme.space[1]};
+  margin-bottom: ${(props) => props.theme.space[3]};
+  margin-left: ${(props) => props.theme.space[3]};
+  margin-right: ${(props) => props.theme.space[3]};
 `;
 
 const Rating = styled.View`
@@ -31,7 +36,7 @@ const Rating = styled.View`
 const Status = styled.View`
   flex-direction: row;
   padding-top: ${(props) => props.theme.space[2]};
-  padding-bottom: ${(props) => props.theme.space[2]};
+  padding-bottom: ${(props) => props.theme.space[1]};
   align-items: center;
 `;
 
@@ -53,8 +58,8 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     ],
     address = "100 some random street",
     isOpenNow = true,
-    rating = 4,
-    isClosedTemporarily,
+    rating = 5,
+    isClosedTemporarily = false,
   } = restaurant;
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
@@ -67,12 +72,17 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         <Status>
           <Rating>
             {ratingArray.map(() => (
-              <SvgXml xml={star} width={30} height={30} />
+              <SvgXml xml={star} width={25} height={25} />
             ))}
           </Rating>
-          {isOpenNow && (
+          {isClosedTemporarily && (
+            <Text variant="label" style={{ color: "red" }}>
+              CLOSED TEMPORARILY
+            </Text>
+          )}
+          {isOpenNow && !isClosedTemporarily && (
             <OpenView>
-              <SvgXml xml={open} width={30} height={30} />
+              <SvgXml xml={open} width={25} height={25} />
             </OpenView>
           )}
         </Status>
